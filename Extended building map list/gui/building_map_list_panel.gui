@@ -120,7 +120,7 @@ types map_list_panel_types {
                 #onclick = "[MapListPanel.Sort('infrastructure_balance')]"
                 button = {
                     texture = "gfx/interface/icons/state_status_icons/state_infrastructure.dds"
-                    size = { 23 23 }
+                    size = { 25 25 }
                     parentanchor = center
                     alwaystransparent = yes
                 }
@@ -168,20 +168,6 @@ types map_list_panel_types {
                 alpha = "[TransparentIfFalse(GreaterThan_int32(MapListOption.GetBuildingData.GetBuilding.GetExpansionLevel, '(int32)0'))]"
                 fontsize_min = 10
             }
-
-#            #Staffed
-#            textbox = {
-#                datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
-#                margin = { 2 0 }
-#                size = { 35 25 }
-#                align = right|nobaseline
-#                text = "[Building.GetEmploymentPercentage|%0]"
-#                tooltip = "TOOLTIP_BUILDING_EMPLOYMENT_EBML_MOD"
-#                parentanchor = vcenter
-#                elide = right
-#                alpha = "[TransparentIfFalse(GreaterThan_int32(Building.GetExpansionLevel, '(int32)0'))]"
-#                fontsize_min = 10
-#            }
 
             #Staffed
             #Different colors for different cases of underemployment
@@ -297,12 +283,12 @@ types map_list_panel_types {
             widget = {
                 size = { 35 25 }
                 datacontext = "[MapListOption.GetBuildingData.GetState]"
-                visible = "[State.HasConstructionQueued]"
                 parentanchor = vcenter
                 textbox = {
                     margin = { 5 0 }
                     size = { 40 25 }
                     align = right|nobaseline
+                    visible = "[State.HasConstructionQueued]"
                     datacontext = "[State.AccessOwner]"
                     text = "[Add_int32(Country.GetNumBuildingsUnderConstructionInState(State.Self), Country.GetNumBuildingsInConstructionQueueInState(State.Self))]"
                     tooltip = "STATE_CONSTRUCTION"
