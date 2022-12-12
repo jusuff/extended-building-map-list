@@ -26,7 +26,7 @@ types map_list_panel_types {
                 align = center|nobaseline
                 text = "BUILDING_MAP_LIST_PANEL_STATE_HEADER"
                 tooltip = "BUILDING_MAP_LIST_PANEL_STATE_HEADER_TOOLTIP"
-                size = { 95 20 }
+                size = { 90 20 }
                 onclick = "[MapListPanel.Sort('state')]"
             }
 
@@ -64,7 +64,7 @@ types map_list_panel_types {
                 align = center|nobaseline
                 #tooltip = "BUILDING_MAP_LIST_PANEL_PEASANTS_HEADER_TOOLTIP"
                 tooltip = "[GetPopType('peasants').GetNameNoIcon]"
-                size = { 55 20 }
+                size = { 50 20 }
                 onclick = "[MapListPanel.Sort('peasants')]"
                 button = {
                     texture = "gfx/interface/icons/pops_icons/peasants.dds"
@@ -78,7 +78,7 @@ types map_list_panel_types {
             sort_button = {
                 align = center|nobaseline
                 tooltip = "UNEMPLOYED"
-                size = { 55 20 }
+                size = { 50 20 }
                 #onclick = "[MapListPanel.Sort('unemployed')]"
                 button = {
                     texture = "gfx/interface/icons/pops_icons/unemployed.dds"
@@ -131,7 +131,8 @@ types map_list_panel_types {
                 align = center|nobaseline
                 #text = "Construction queue" 
                 tooltip = "BUILDING_MAP_LIST_PANEL_CONSTRUCTION_QUEUE_HEADER_TOOLTIP_EBML_MOD"
-                size = { 35 20 }
+                #size includes header space for Info column, which doesn't have it's own header
+                size = { 50 20 }
                 #onclick = "[MapListPanel.Sort('construction_queue')]"
                 button = {
                     texture = "gfx/interface/icons/state_status_icons/has_construction.dds"
@@ -147,7 +148,7 @@ types map_list_panel_types {
             #State
             textbox = {
                 margin = { 2 0 }
-                size = { 95 25 }
+                size = { 90 25 }
                 align = left|nobaseline
                 text = "[MapListOption.GetBuildingData.GetState.GetNameNoFormatting]"
                 parentanchor = vcenter
@@ -219,7 +220,7 @@ types map_list_panel_types {
             #Peasants
             textbox = {
                 margin = { 2 0 }
-                size = { 55 25 }
+                size = { 50 25 }
                 align = right|nobaseline
                 text = "[MapListOption.GetBuildingData.GetState.GetNumSubsistenceWorkingAdults|D]"
                 parentanchor = vcenter
@@ -230,7 +231,7 @@ types map_list_panel_types {
             #Unemployed
             textbox = {
                 margin = { 2 0 }
-                size = { 55 25 }
+                size = { 50 25 }
                 align = right|nobaseline
                 text = "[MapListOption.GetBuildingData.GetState.GetNumUnemployedWorkingAdults|Do]"
                 parentanchor = vcenter
@@ -281,12 +282,12 @@ types map_list_panel_types {
 
             #Construction queue
             widget = {
-                size = { 35 25 }
+                size = { 30 25 }
                 datacontext = "[MapListOption.GetBuildingData.GetState]"
                 parentanchor = vcenter
                 textbox = {
                     margin = { 5 0 }
-                    size = { 40 25 }
+                    size = { 30 25 }
                     align = right|nobaseline
                     visible = "[State.HasConstructionQueued]"
                     datacontext = "[State.AccessOwner]"
@@ -295,6 +296,19 @@ types map_list_panel_types {
                     parentanchor = vcenter
                     elide = right
                     fontsize_min = 10
+                }
+            }
+
+            #Info tooltip
+            widget = {
+                align = center|nobaseline
+                size = { 20 25 }
+                parentanchor = vcenter
+                tooltip = "Info tooltip"
+                icon = {
+                    texture = "gfx/interface/icons/generic_icons/information.dds"
+                    size = { 18 18 }
+                    parentanchor = center
                 }
             }
         }
