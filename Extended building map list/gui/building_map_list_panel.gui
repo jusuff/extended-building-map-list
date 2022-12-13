@@ -1,6 +1,6 @@
 #columns
-#status	state	size	staffed	peasants	unemployed	profitability	profit_impact	infra	Planned
-#55	95	55	35	55	55	55	60	35	35
+#SUM	status	state	size	staffed	peasants	unemployed	profitability	profit_impact	infra	Planned	Info
+#535	55	90	55	35	50	50	55	60	35	30	20
 #
 types map_list_panel_types {
     ### BUILD BUILDINGS
@@ -304,7 +304,8 @@ types map_list_panel_types {
                 align = center|nobaseline
                 size = { 20 25 }
                 parentanchor = vcenter
-                tooltip = "Info tooltip"
+                datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
+                tooltip = "BUILDING_MAP_LIST_PANEL_INFO_HEADER_TOOLTIP_EBML_MOD"
                 icon = {
                     texture = "gfx/interface/icons/generic_icons/information.dds"
                     size = { 18 18 }
