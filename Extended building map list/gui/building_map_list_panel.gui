@@ -339,7 +339,6 @@ types map_list_panel_types {
 
             #Info tooltip
             widget = {
-                align = center|nobaseline
                 size = { 20 25 }
                 parentanchor = vcenter
                 datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
