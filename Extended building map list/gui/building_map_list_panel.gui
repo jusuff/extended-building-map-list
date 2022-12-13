@@ -105,10 +105,16 @@ types map_list_panel_types {
             #Profit_impact
             sort_button = {
                 align = center|nobaseline
-                text = "BUILDING_MAP_LIST_PANEL_PROFIT_IMPACT_HEADER"
+                #text = "BUILDING_MAP_LIST_PANEL_PROFIT_IMPACT_HEADER"
                 tooltip = "BUILDING_MAP_LIST_PANEL_PROFIT_IMPACT_TOOLTIP"
                 size = { 60 20 }
                 onclick = "[MapListPanel.Sort('profit_impact')]"
+                button = {
+                    texture = "gfx/interface/icons/notification_icons/unused/money.dds"
+                    size = { 25 25 }
+                    parentanchor = center
+                    alwaystransparent = yes
+                }
             }
 
             #Infrastructure
