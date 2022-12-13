@@ -305,6 +305,7 @@ types map_list_panel_types {
                 size = { 20 25 }
                 parentanchor = vcenter
                 datacontext = "[MapListOption.GetBuildingData.GetBuilding]"
+                visible = "[Not(Or(Building.IsBuildingType('building_government_administration'),Or(Building.IsBuildingType('building_construction_sector'),Or(Building.IsBuildingType('building_university'),Or(Building.IsBuildingType('building_port'),Or(Building.IsBuildingType('building_naval_base'),Building.IsBuildingType('building_barracks')))))))]"
                 tooltip = "BUILDING_MAP_LIST_PANEL_INFO_HEADER_TOOLTIP_EBML_MOD"
                 icon = {
                     texture = "gfx/interface/icons/generic_icons/information.dds"
