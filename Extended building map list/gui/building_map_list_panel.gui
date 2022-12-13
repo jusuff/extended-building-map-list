@@ -124,8 +124,25 @@ types map_list_panel_types {
                 tooltip = "BUILDING_MAP_LIST_PANEL_INFRASTRUCTURE_HEADER_TOOLTIP_EBML_MOD"
                 size = { 35 20 }
                 #onclick = "[MapListPanel.Sort('infrastructure_balance')]"
+                visible = "[Not(EqualTo_string( MapListBuildingPanel.GetBuildingType.GetKey, 'building_government_administration'))]"
                 button = {
                     texture = "gfx/interface/icons/state_status_icons/state_infrastructure.dds"
+                    size = { 25 25 }
+                    parentanchor = center
+                    alwaystransparent = yes
+                }
+            }
+
+            #TaxCapacity - only for Government Administration building
+            sort_button = {
+                align = center|nobaseline
+                #text = "Tax Capacity"
+                tooltip = "BUILDING_MAP_LIST_PANEL_TAXCAPACITY_HEADER_TOOLTIP_EBML_MOD"
+                size = { 35 20 }
+                #onclick = "[MapListPanel.Sort('state_tax_capacity')]"
+                visible = "[EqualTo_string( MapListBuildingPanel.GetBuildingType.GetKey, 'building_government_administration')]"
+                button = {
+                    texture = "gfx/interface/icons/state_status_icons/state_tax_capacity.dds"
                     size = { 25 25 }
                     parentanchor = center
                     alwaystransparent = yes
@@ -275,12 +292,27 @@ types map_list_panel_types {
 
             #Infrastructure
             textbox = {
+                visible = "[Not(EqualTo_string( MapListBuildingPanel.GetBuildingType.GetKey, 'building_government_administration'))]"
                 datacontext = "[MapListOption.GetBuildingData.GetState]"
                 margin = { 2 0 }
                 size = { 35 25 }
                 align = right|nobaseline
                 text = "[State.GetInfrastructureBalance|0+=]"
                 tooltip = "STATE_INFRASTRUCTURE_DESC"
+                parentanchor = vcenter
+                elide = right
+                fontsize_min = 10
+            }
+
+            #TaxCapacity - only for Government Administration building
+            textbox = {
+                visible = "[EqualTo_string( MapListBuildingPanel.GetBuildingType.GetKey, 'building_government_administration')]"
+                datacontext = "[MapListOption.GetBuildingData.GetState]"
+                margin = { 2 0 }
+                size = { 35 25 }
+                align = right|nobaseline
+                text = "[State.CalcTaxCapacityBalance|0+=]"
+                tooltip = "STATE_TAX_CAPACITY_DESC"
                 parentanchor = vcenter
                 elide = right
                 fontsize_min = 10

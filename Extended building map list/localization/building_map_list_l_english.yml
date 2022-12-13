@@ -2,6 +2,7 @@
  BUILDING_MAP_LIST_PANEL_INFRASTRUCTURE_HEADER_TOOLTIP_EBML_MOD:0 "#header Infrastructure#!"
  BUILDING_MAP_LIST_PANEL_CONSTRUCTION_QUEUE_HEADER_TOOLTIP_EBML_MOD:0 "#header Construction queue#!"
  BUILDING_MAP_LIST_PANEL_STAFFED_HEADER_TOOLTIP_EBML_MOD:0 "#header Staffed#!"
+ BUILDING_MAP_LIST_PANEL_TAXCAPACITY_HEADER_TOOLTIP_EBML_MOD:0 "#header Taxation Capacity#!"
  TOOLTIP_BUILDING_EMPLOYMENT_EBML_MOD:0 "#BOLD #V [Building.GetName] Employment#!#!\nEmployment: #variable [Building.GetNoOfEmployed|1*]#! / #maximum [Building.GetEmployeeCap|1*] Employees#! (#BOLD #V [Building.GetEmploymentPercentage|0%]#!#!)\n$TOOLTIP_DELIMITER$[Building.GetAllEmployeesTransferDesc]\n[Building.GetAllFailedHiresDesc]"
  BUILDING_MAP_LIST_PANEL_INFO_HEADER_TOOLTIP_EBML_MOD_THROUGHPUT:0 "[concept_throughput]: [MapListOption.GetBuildingData.GetBuilding.GetThroughputBonusCurrent|%0+], including:\n [MapListOption.GetBuildingData.GetBuilding.GetThroughputDesc]\n"
  BUILDING_MAP_LIST_PANEL_INFO_HEADER_TOOLTIP_EBML_MOD_CASH_RESERVES:0 "[concept_cash_reserves]: #variable [MapListOption.GetBuildingData.GetBuilding.GetCurrentCashReserves|D]#! [GetTrendIcon(MapListOption.GetBuildingData.GetBuilding.GetCashReservesTrend)] / #maximum [MapListOption.GetBuildingData.GetBuilding.GetMaxCashReserves|k]#!"
