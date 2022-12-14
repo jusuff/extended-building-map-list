@@ -7,6 +7,10 @@ types map_list_panel_types {
     type build_building_map_list_panel = map_list_panel {
         name = "build_building_map_list_panel"
 
+        blockoverride "button_color" {
+            color = "[Select_Vec4f(MapListOption.GetBuildingData.GetState.IsIncorporated, '(CVector4f)0.7,0.2,0.2,0.5', '(CVector4f)0.2,0.7,0.2,0.2' )]"
+        }
+
         blockoverride "headers" {
             sort_button = {
                 align = center|nobaseline
